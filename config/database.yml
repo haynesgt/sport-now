@@ -5,21 +5,24 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  username: sportnow
+  password: d892c872c3aeaf6edddc5ca419d25850bc1700462fcbfc0274f7ee32be7943abcd55291ec640aaa35f221351dfff957e73f5e08a7cbe00045172b86c81991015
   pool: 5
+  host: 127.0.0.1
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: sportnow_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: sportnow_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: sportnow_production
