@@ -31,6 +31,24 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 </script>
 
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">SportNow</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <% if session[:user] == nil then %>
+	  <li><a href="/auth/facebook"><b>Login</b></a></li>
+	<% else %>
+	  <li class="<%= 'active' if params[:controller] == 'events' %>"><a href="/events">Events</a></li>
+	  <li class="<%= 'active' if params[:controller] == 'profile' %>"><a href="/profile">Profile</a></li>
+	  <li><a href="/logout">Logout</a></li>
+	<% end %>
+      </ul>
+    </div>
+  </nav>
+
 <div class="container">
 <%= yield %>
 </div>

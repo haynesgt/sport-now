@@ -18,14 +18,13 @@ $(function() {
 </script>
 <div class="row">
 	<div class="col-sm-12">
-		<h1>Welcome</h1>
 		<% if session[:user] == nil then %>
+			<p>Welcome to SportNow.</p>
 			<a href="/auth/facebook">Login with Facebook</a><br>
 			<!--<a id="facebook-login" href="#">Popup login</a><br>-->
 		<% else %>
 		<p>
-			<a href="/logout">Logout</a><br>
-			Hello, <%= session[:user]["name"] %>
+			Hello, <%= session[:user]["name"] %>.
 		</p>
 		<% end %>
 		<div id="connect"></div>

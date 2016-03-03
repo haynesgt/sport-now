@@ -2,7 +2,7 @@
 
 <h1>Listing Events</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Owner</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.owner %></td>
+        <td><%= event.owner_uid %></td>
         <td><%= event.sport %></td>
         <td><%= event.lat %></td>
         <td><%= event.long %></td>
