@@ -42,7 +42,7 @@ window.fbAsyncInit = function() {
 	  <li><a href="/auth/facebook"><b>Login</b></a></li>
 	<% else %>
 	  <li class="<%= 'active' if params[:controller] == 'events' %>"><a href="/events">Events</a></li>
-	  <li class="<%= 'active' if params[:controller] == 'profile' %>"><a href="/profile">Profile</a></li>
+	  <li class="<%= 'active' if params[:controller] == 'profiles' %>"><a href="/profiles">Profile</a></li>
 	  <li><a href="/logout">Logout</a></li>
 	<% end %>
       </ul>
