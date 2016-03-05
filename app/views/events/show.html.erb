@@ -19,6 +19,21 @@
   <strong>Long:</strong>
   <%= @event.long %>
 </p>
+<div id="map"> </div>
+<script>
+var map;
+function initMap() {
+	var center = {lat: <%= @event.lat %>, lng: <%= @event.long %>};
+	map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 15,
+	  center: center 
+	});
+	new google.maps.Marker({position: center, map: map});
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1aKeoEZEiAa6wJt8ZNndH8bziDtTw4xM&callback=initMap"
+    async defer></script>
 
 <p>
   <strong>Location:</strong>
